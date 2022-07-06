@@ -1,0 +1,18 @@
+<form action='/pesquisar' method="post">
+
+    <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control rounded pesquisar" name="nome" placeholder="Pesquisar contatos..." />
+        </div>
+        <div class="col-lg-3">
+
+            <input type="submit" class="btn btn-primary bi bi-search" value="Pesquisar">
+
+            </input>
+
+        </div>
+    </div>
+
+
+</form>

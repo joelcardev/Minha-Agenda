@@ -1,0 +1,31 @@
+
+<% if(errors.length> 0){ %>
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="alert alert-danger lead">
+
+                <% errors.forEach(erro=> {%>
+
+                    <%= erro %><br>
+
+                        <% });%>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+
+                    <% if(success.length> 0){ %>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <div class="alert alert-success lead">
+
+                                    <% success.forEach(success=> {%>
+
+                                        <%= success %><br>
+
+                                            <% });%>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%}%>

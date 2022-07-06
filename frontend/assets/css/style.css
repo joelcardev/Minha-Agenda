@@ -1,0 +1,23 @@
+
+.agenda {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+    font-size: 50px;
+ };
+ .nomecadastro {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+    font-size: 40px;
+ };
+ .pesquisar{
+   margin-top: 20px;
+   size: 30px;
+
+ };
+.p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+};
+
+.fundo{
+background-color:  rgb(38, 86, 141);
+};

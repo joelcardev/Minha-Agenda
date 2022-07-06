@@ -1,0 +1,108 @@
+<%- include('includes/head'); %>
+    <%- include('includes/nav'); %>
+
+        <div class="container-fluid">
+            <div class="row mt-4">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6 my-3">
+
+
+                    <h1 class="agenda text-center">
+                        Agenda
+                    </h1>
+                    <h4 class="p text-center lead mb-3">
+                        Seus contatos abaixo
+                        </h3>
+
+                        <% if(contato.length> 0 && contato != 'vazio' && contato !=
+                            'DESLOGADO'){ %>
+                            <%- include('includes/pesquisar.ejs');%>
+                                <div class="resposive-table mt-3">
+                                    <table class="table">
+
+
+                                        <% contato.forEach(contato=>{ %>
+
+                                            <tr>
+                                                <td>
+                                                    <%= contato.nome%>
+                                                </td>
+                                                <td>
+                                                    <%=contato.email%>
+                                                </td>
+                                                <td>
+                                                    <%= contato.telefone%>
+                                                </td>
+
+                                                <td>
+                                                    <a href="/cadcontatos/<%=
+                                                                contato._id%>" class="btn
+                                                                btn-default
+                                                                btn-sm">
+                                                        <i class="bi
+                                                                    bi-pencil-fill"></i>Editar</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/cadcontatos/delete/<%=
+                                                                contato._id %>" class="btn
+                                                                btn-default
+                                                                btn-sm
+                                                                text-danger">
+                                                        <i class="bi
+                                                                    bi-trash3-fill">Excluir</i>
+                                                    </a>
+                                                </td>
+
+                                            </tr>
+
+                                            <% }) %>
+
+
+                                    </table>
+
+
+                                </div>
+                                <% }else if(contato=='vazio' ){ %>
+                                    <h3 class="text-center mt-5
+                                                        lead">
+                                        Voce não possui contatos
+                                        cadastrados, por
+                                        gentileza cadastre
+                                        contatos!</h3>
+
+
+                                    <% }else if(contato=='DESLOGADO' ){ %>
+                                        <h2 class="text-center
+                                                            mt-5 lead">
+                                            Você não esta
+                                            logado, entre ou
+                                            cadastre-se para
+                                            acessar Minha
+                                            Agenda.</h3>
+                                            <div class="col
+                                                            text-center mt-3">
+                                                <a class="nav-link" href="/login/index">
+                                                    <button type="submit" class="btn
+                                                                    btn-primary">
+                                                        Acessar
+                                                        minha Conta
+                                                    </button></a>
+                                            </div>
+
+                                            <% }else{ %>
+                                                <%- include('includes/pesquisar.ejs');%>
+                                                    <h3 class="text-center
+                                                                    mt-5">Contato
+                                                        nao
+                                                        encontrado.</h3>
+                                                    <%} %>
+
+                                                        <%- include('includes/messages.ejs');%>
+                </div>
+
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+
+
+        <%- include('includes/footer'); %>
